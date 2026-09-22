@@ -1,27 +1,40 @@
-THE AURALIUS — static website
-=============================
+THE AURALIUS — static website export
+====================================
 
-index.html is the entry point. No server, no Node, no build step needed.
+What this is
+------------
+The complete site as plain static files. No build step, no server-side code,
+no Node needed. Everything it loads (fonts for the headings come from Google
+Fonts, so a connection helps) sits in this folder.
 
-TO SEE IT RIGHT NOW
-Double-click index.html. It opens in your browser and works offline.
+To view it locally
+------------------
+Double-click index.html. It opens in any browser straight from disk.
 
-TO GET A PUBLIC LINK
-Easiest: go to  https://app.netlify.com/drop  and drag THIS WHOLE FOLDER onto
-the page. You get a live https link in a few seconds, free.
+To put it online
+----------------
+Upload the CONTENTS of this folder (not the folder itself) to any static host:
 
-On your own hosting: upload the CONTENTS of this folder (index.html, assets,
-images, fonts, videos and the loose .mp4/.webm files) into your web root —
-usually public_html, www, or htdocs. Then open your domain.
+  Netlify / Cloudflare Pages / Vercel  — drag this folder onto their dashboard
+  GitHub Pages                         — commit the contents to the repo
+  Any cPanel / FTP host                — upload into public_html
 
-This build uses relative paths, so it works from a domain root
-(example.com), a sub-folder (example.com/auralius/), or straight off disk.
-Keep every file together in the same folder and the structure unchanged.
+A _redirects file is included for Netlify and Cloudflare Pages, so deep links
+fall back to the single page instead of 404ing. Other hosts ignore it safely.
 
-NOTES
-- Videos (hero-loop, mist-scrub) are the big files. Keep them — the hero
-  background and the scroll-through mist sequence use them.
-- Fonts load from Google Fonts, so first paint online is best with internet.
-- _redirects is a Netlify helper. Harmless on any other host.
-- The ENQUIRE form is front-end only in this export; wire it to your own
-  form service (Formspree, Google Form, your CRM) before going live.
+What's inside
+-------------
+  index.html          the page
+  assets/site.js      the whole site — markup, styles and motion, in one file
+  images/             stills and photography
+  hero-loop.*         the hero video, in two formats for browser coverage
+  mist-scrub.*        the scroll-scrubbed mist clip
+  fonts/, videos/     supporting assets
+  favicon.ico, og-image.png
+
+Editing text or images
+----------------------
+Swap a picture by replacing the file in images/ with one of the same name.
+Copy lives inside assets/site.js, which is minified — editing it by hand is
+possible but unpleasant. Come back to Runable for wording or layout changes
+and export again.
