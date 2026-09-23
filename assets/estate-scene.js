@@ -154,40 +154,41 @@
         const progress = Math.max(0, Math.min(1, -rect.top / distance));
         const visible = rect.top < window.innerHeight && rect.bottom > 0;
         const reduced = motion.matches;
-        const clear = ready(evening) ? smooth(progress, 0.015, 0.24) : 0;
-        // Start bringing the villa lights in while the remaining clouds clear.
-        const dusk = ready(lights) ? smooth(progress, 0.12, 0.30) : 0;
-        const dark = ready(night) ? smooth(progress, 0.57, 0.79) : 0;
+        // Clouds move and fade immediately, revealing the first evening still.
+        // Continuing the scroll brings in the lit evening while cloud banks
+        // are still present. Night follows directly, without an extra hold.
+        const clear = ready(evening) ? Math.min(1, progress / 0.48) : 0;
+        const dusk = ready(lights) ? smooth(progress, 0.08, 0.16) : 0;
+        const dark = ready(night) ? smooth(progress, 0.16, 0.60) : 0;
 
         root.dataset.progress = progress.toFixed(4);
-        root.dataset.phase = progress < 0.12 ? "clouds" : progress < 0.30
-          ? "evening" : progress < 0.79 ? "dusk" : "night";
+        root.dataset.phase = progress < 0.48 ? "clouds" : progress < 0.60 ? "dusk" : "night";
         opacity(lights, dusk);
         opacity(night, dark);
         // Let the textured cloud banks reveal the landscape. The flat white
         // veil clears first, and the hero bridge dissolves with the clouds.
-        opacity(veil, 1 - smooth(clear, 0, 0.38));
-        opacity(entry, 1 - smooth(clear, 0, 0.85));
-        opacity(cloudTop, 1 - smooth(clear, 0.12, 0.94));
-        opacity(cloudBottom, 1 - smooth(clear, 0.22, 1));
+        opacity(veil, 1 - Math.min(1, clear / 0.38));
+        opacity(entry, 1 - Math.min(1, clear / 0.85));
+        opacity(cloudTop, 1 - clear);
+        opacity(cloudBottom, 1 - clear);
         cloudTop.style.transform = reduced ? "none"
           : `translate3d(${-7 * clear}%,${-58 * clear}%,0) scale(${1 + 0.16 * clear})`;
         cloudBottom.style.transform = reduced ? "none"
           : `translate3d(${6 * clear}%,${52 * clear}%,0) scale(${1 + 0.18 * clear})`;
         // All landscape layers share the same camera and 16:9 composition.
-        stage.style.transform = `translate(-50%,-50%) scale(${reduced ? 1 : 1.035 - 0.035 * smooth(progress, 0, 0.79)})`;
+        stage.style.transform = `translate(-50%,-50%) scale(${reduced ? 1 : 1.035 - 0.035 * smooth(progress, 0, 0.60)})`;
         opacity(snow, reduced ? 0 : smooth(dark, 0.45, 1));
         snow.style.setProperty("--snow-play-state", visible && !document.hidden && dark > 0.45 ? "running" : "paused");
-        opacity(road, dark >= 1 ? smooth(progress, 0.79, 0.82) : 0);
-        if (visible && progress >= 0.5 && !reduced) player.warm();
-        player.setActive(visible && !document.hidden && !reduced && dark >= 1, progress < 0.79 || reduced);
+        opacity(road, dark >= 1 ? smooth(progress, 0.60, 0.66) : 0);
+        if (visible && progress >= 0.16 && !reduced) player.warm();
+        player.setActive(visible && !document.hidden && !reduced && dark >= 1, progress < 0.60 || reduced);
 
-        const copy = smooth(progress, 0.82, 0.90);
+        const copy = smooth(progress, 0.66, 0.82);
         opacity(shade, copy);
         opacity(title, copy);
         title.style.transform = reduced ? "none" : `translateY(${24 * (1 - copy)}px)`;
-        opacity(approach, smooth(progress, 0.9, 0.97));
-        opacity(exit, smooth(progress, 0.94, 1));
+        opacity(approach, smooth(progress, 0.82, 0.96));
+        opacity(exit, smooth(progress, 0.88, 1));
       }
 
       function schedule() {

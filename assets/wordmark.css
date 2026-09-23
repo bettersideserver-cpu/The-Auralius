@@ -1,0 +1,55 @@
+.wordmark.hero-wordmark {
+  --replacement-scale: .84;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.05;
+  background: none;
+  cursor: default;
+}
+/* The original whole-name sheen must not draw AURA over the rolling word. */
+.wordmark.hero-wordmark::after { content: none; }
+.hero-wordmark .wordmark-ink {
+  display: inline-block;
+  color: transparent;
+  background-image: linear-gradient(174deg, #fffdf8, #f5eee0 30%, #e3d2ae, #fdfaf3 86%, #efe6d3);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.hero-wordmark .wordmark-fixed { flex: none; }
+.wordmark-roller {
+  position: relative;
+  flex: none;
+  display: inline-block;
+  overflow: hidden;
+  perspective: 700px;
+}
+.wordmark-roll-sizer { display: inline-block; visibility: hidden; }
+.wordmark-roll-row {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  backface-visibility: hidden;
+  transform-origin: center center;
+  transition: transform .75s cubic-bezier(.22, 1, .36, 1), opacity .45s ease;
+}
+.wordmark-roll-original { transform: translateY(0) rotateX(0); opacity: 1; }
+.wordmark-roll-incoming { transform: translateY(110%) rotateX(-70deg); opacity: 0; }
+.hero-wordmark .wordmark-roll-replacement {
+  flex: none;
+  width: max-content;
+  transform: scaleX(var(--replacement-scale));
+  transform-origin: left center;
+}
+.hero-wordmark:is(:hover, :focus-visible) .wordmark-roll-original {
+  transform: translateY(-110%) rotateX(70deg);
+  opacity: 0;
+}
+.hero-wordmark:is(:hover, :focus-visible) .wordmark-roll-incoming {
+  transform: translateY(0) rotateX(0);
+  opacity: 1;
+}
+.hero-wordmark:focus-visible { outline: 1px solid #e3d2ae88; outline-offset: 10px; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-wordmark .wordmark-roll-row { transition: none; }
+}

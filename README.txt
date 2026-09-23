@@ -28,6 +28,10 @@ What's inside
   assets/site.js      original site export, with the estate scene connected below
   assets/estate-scene.js   editable scroll transitions and road frame player
   assets/estate-scene.css  pinned scene, image alignment and responsive styling
+  assets/exteriors-scene.js   exterior photographs, captions and scroll reveals
+  assets/exteriors-scene.css  full-screen exterior showcase and mobile layout
+  assets/wordmark.js       hero name with the AURA / KASAU hover swap
+  assets/wordmark.css      rolling animation, fixed letter positions and focus styling
   evening.webp        the first hillside image revealed through the clouds
   Evening-1.webp      the second hillside image, with the villa lights on
   night.webp          the final hillside image
@@ -47,10 +51,13 @@ and export again.
 
 Evening-to-night scroll scene
 ----------------------------
-The estate section stays pinned for four viewport heights of scrolling:
-  1. Clouds dissolve to evening.webp (1.5–24% of the scroll).
-  2. Evening-1.webp starts appearing as the clouds part (12–30%).
-  3. night.webp crossfades in (57–79%), with snow appearing as night settles.
+The estate section stays pinned for two viewport heights of scrolling:
+  1. Clouds lift up/down and start losing opacity from the first scroll
+     pixel, clearing completely by 48% of the scroll.
+  2. evening.webp stays visible through the opening clouds for the first 8%.
+     Evening-1.webp then crossfades in over 8–16%, while clouds still remain.
+  3. night.webp immediately starts crossfading in (16–60%), without a scroll
+     pause after Evening-1.webp. Snow appears as night settles.
   4. Once night is fully revealed, road/Comp 1_00000.png through
      Comp 1_00240.png loop at 24 fps. Scrolling back reverses the image
      transitions and resets the road loop. Leaving the section pauses it.
@@ -61,3 +68,23 @@ center-cropped stills; keep the layers together when adjusting their framing.
 The player keeps only a rolling buffer of decoded frames in memory. Reduced
 motion keeps the scroll-controlled still fades and disables snow and the loop.
 No build step or video conversion is needed; direct index.html viewing works.
+
+Exterior showcase
+-----------------
+The Exteriors is a full-screen, three-chapter scroll scene. Five alternating
+vertical panels reveal the Clubhouse and Deodar Walk photographs over the
+preceding image. Captions fade out before the next title appears, and the
+chapter buttons scroll to the corresponding complete photograph.
+
+Edit the places array in assets/exteriors-scene.js to change photos and copy.
+The section uses 300svh (two viewport heights of pinned scrolling), with short
+pauses at complete images. Scrolling backwards reverses the reveal. Reduced
+motion uses a simple crossfade in place of the panel effect. The site navigation
+adopts light text over the photography only while this section is pinned.
+
+Hero name hover
+---------------
+Hover the large hero name (or focus it with the keyboard) to roll AURA into
+KASAU. THE and LIUS keep their positions. Leaving the name rolls it back.
+The replacement is fitted to the original word's width, including after font
+loading or resizing. Reduced motion changes the word without the rolling effect.
