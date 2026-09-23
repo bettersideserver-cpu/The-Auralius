@@ -3,114 +3,45 @@
 (function () {
   "use strict";
 
-  const FRAME_COUNT = 241;
-  const FRAME_RATE = 24;
-  const FRAME_BUFFER = 12;
   const smooth = (value, start, end) => {
     const t = Math.max(0, Math.min(1, (value - start) / (end - start)));
     return t * t * (3 - 2 * t);
   };
 
-  function roadPlayer(canvas) {
-    const context = canvas.getContext("2d");
-    const frames = new Map();
-    let disposed = false;
-    let running = false;
-    let raf = 0;
-    let lastTime = 0;
-    let elapsed = 0;
-    let drawn = -1;
-
-    function release(frame) {
-      if (frame.image && frame.image.close) frame.image.close();
-    }
-
-    function buffer(index) {
-      if (!context || disposed) return;
-      const wanted = new Set();
-      for (let offset = 0; offset < FRAME_BUFFER; offset++) {
-        wanted.add((index + offset) % FRAME_COUNT);
-      }
-      for (const [key, frame] of frames) {
-        if (!wanted.has(key)) {
-          release(frame);
-          frames.delete(key);
-        }
-      }
-      for (const key of wanted) {
-        if (frames.has(key)) continue;
-        const frame = { image: null };
-        frames.set(key, frame);
-        const image = new Image();
-        image.decoding = "async";
-        image.onload = async () => {
-          let decoded = image;
-          // A small rolling buffer avoids retaining 241 full HD decoded images.
-          if (window.createImageBitmap) {
-            try {
-              decoded = await createImageBitmap(image, {
-                resizeWidth: 1280, resizeHeight: 720, resizeQuality: "high"
-              });
-            } catch (_) { /* Local-file browsers can use the Image directly. */ }
-          }
-          if (disposed || frames.get(key) !== frame) {
-            if (decoded.close) decoded.close();
-            return;
-          }
-          frame.image = decoded;
-        };
-        image.onerror = () => { frame.failed = true; };
-        image.src = `road/Comp%201_${String(key).padStart(5, "0")}.png`;
-      }
-    }
-
-    function tick(time) {
-      if (!running || disposed) return;
-      if (lastTime) elapsed += Math.min(time - lastTime, 100);
-      lastTime = time;
-      const index = Math.floor(elapsed * FRAME_RATE / 1000) % FRAME_COUNT;
-      if (index !== drawn) {
-        buffer(index);
-        const frame = frames.get(index);
-        if (frame && frame.image) {
-          context.clearRect(0, 0, canvas.width, canvas.height);
-          context.drawImage(frame.image, 0, 0, canvas.width, canvas.height);
-          canvas.dataset.frame = String(index);
-          drawn = index;
-        }
-      }
-      raf = requestAnimationFrame(tick);
-    }
-
+  // The "road" layer is a short, seam-blended video (light trails on the
+  // night road) that native-loops forever once the scene reaches full
+  // night. It only ever plays/pauses/rewinds — the browser handles the
+  // actual looping, so there is no frame bookkeeping to do here.
+  function roadPlayer(video) {
+    let active = false;
+    let warmed = false;
     return {
-      warm() { if (!frames.size) buffer(0); },
-      setActive(active, reset = false) {
-        if (active && context && !running) {
-          running = true;
-          lastTime = 0;
-          buffer(Math.floor(elapsed * FRAME_RATE / 1000) % FRAME_COUNT);
-          raf = requestAnimationFrame(tick);
-        } else if (!active && running) {
-          running = false;
-          cancelAnimationFrame(raf);
-          lastTime = 0;
+      warm() {
+        if (warmed) return;
+        warmed = true;
+        video.load();
+      },
+      setActive(shouldPlay, reset = false) {
+        if (reset) {
+          if (active || video.currentTime > 0) {
+            video.pause();
+            try { video.currentTime = 0; } catch (_) { /* not seekable yet */ }
+          }
+          active = false;
+          return;
         }
-        canvas.dataset.playing = String(running);
-        if (reset && (elapsed || drawn !== -1)) {
-          elapsed = 0;
-          drawn = -1;
-          if (context) context.clearRect(0, 0, canvas.width, canvas.height);
-          canvas.dataset.frame = "0";
-          for (const frame of frames.values()) release(frame);
-          frames.clear();
+        if (shouldPlay && !active) {
+          active = true;
+          const attempt = video.play();
+          if (attempt && attempt.catch) attempt.catch(() => {});
+        } else if (!shouldPlay && active) {
+          active = false;
+          video.pause();
         }
       },
       destroy() {
-        disposed = true;
-        running = false;
-        cancelAnimationFrame(raf);
-        for (const frame of frames.values()) release(frame);
-        frames.clear();
+        active = false;
+        video.pause();
       }
     };
   }
@@ -179,6 +110,11 @@
         stage.style.transform = `translate(-50%,-50%) scale(${reduced ? 1 : 1.035 - 0.035 * smooth(progress, 0, 0.60)})`;
         opacity(snow, reduced ? 0 : smooth(dark, 0.45, 1));
         snow.style.setProperty("--snow-play-state", visible && !document.hidden && dark > 0.45 ? "running" : "paused");
+        // Once night is fully in, the still frame hands off to the looping
+        // road video. Scrolling back out (progress < 0.60) rewinds it to
+        // frame zero, so scrolling forward into night always restarts the
+        // same loop from its beginning — mirroring how the still images
+        // themselves reset when you scroll back above them.
         opacity(road, dark >= 1 ? smooth(progress, 0.60, 0.66) : 0);
         if (visible && progress >= 0.16 && !reduced) player.warm();
         player.setActive(visible && !document.hidden && !reduced && dark >= 1, progress < 0.60 || reduced);
@@ -230,7 +166,13 @@
             still("evening", "evening.webp"),
             still("lights", "Evening-1.webp"),
             still("night", "night.webp")),
-          h("canvas", { key: "road", "data-layer": "road", className: "estate-road", width: 1920, height: 1080, "aria-hidden": true })
+          h("video", {
+            key: "road", "data-layer": "road", className: "estate-road",
+            muted: true, loop: true, playsInline: true, preload: "auto",
+            "aria-hidden": true
+          },
+            h("source", { src: "road-night-loop.webm", type: "video/webm" }),
+            h("source", { src: "road-night-loop.mp4", type: "video/mp4" }))
         ]),
         layer("cloud-top", "estate-cloud estate-cloud-top cloud-bank-top", h("img", { src: "images/cloud-1.webp", alt: "" })),
         layer("cloud-bottom", "estate-cloud estate-cloud-bottom cloud-bank-bottom", h("img", { src: "images/cloud-2.webp", alt: "" })),
