@@ -1,0 +1,93 @@
+.mobile-page-nav {
+  position: fixed;
+  right: 1.25rem;
+  top: 5.25rem;
+  z-index: 100;
+  font-family: Jost, sans-serif;
+}
+
+.mobile-page-nav details {
+  position: relative;
+}
+
+.mobile-page-nav summary {
+  display: block;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid rgba(252, 252, 249, 0.45);
+  background: #252a20;
+  color: #fcfcf9;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  list-style: none;
+}
+
+.mobile-page-nav summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-page-nav summary:focus-visible,
+.mobile-page-nav a:focus-visible {
+  outline: 2px solid #b9a57d;
+  outline-offset: 3px;
+}
+
+.mobile-page-nav__links {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.5rem);
+  display: grid;
+  min-width: 13rem;
+  padding: 0.5rem 0;
+  background: #fcfcf9;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+}
+
+.mobile-page-nav a {
+  padding: 0.7rem 1rem;
+  color: #252a20;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.mobile-page-nav a:hover {
+  background: #eeeae0;
+}
+
+@media (min-width: 1024px), print {
+  .mobile-page-nav {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  #root header > .gutter {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+  }
+
+  #root header > .gutter > a {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  #root header nav {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    gap: 1.2rem;
+    justify-self: center;
+    white-space: nowrap;
+  }
+
+  #root header > .gutter > div {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+}

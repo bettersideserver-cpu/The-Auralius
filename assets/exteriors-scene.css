@@ -78,7 +78,7 @@ body:has(.exteriors-showcase[data-pinned="true"]) header.fixed a { border-color:
   gap: 12px;
 }
 .exteriors-count-current {
-  font: 400 clamp(68px, 8vw, 120px)/.82 "Cormorant Garamond", serif;
+  font: 400 clamp(68px, 8vw, 120px)/.82 "Marcellus", serif;
   color: transparent;
   -webkit-text-stroke: 1px #f6f3e987;
   letter-spacing: -.06em;
@@ -108,7 +108,7 @@ body:has(.exteriors-showcase[data-pinned="true"]) header.fixed a { border-color:
 .exteriors-location span::after { content: ""; display: inline-block; vertical-align: middle; width: 32px; height: 1px; background: #d7ddbb75; margin-left: 20px; }
 .exteriors-caption h3 {
   margin: 0;
-  font: 400 clamp(66px, 8.3vw, 144px)/.90 "Cormorant Garamond", serif;
+  font: 400 clamp(66px, 8.3vw, 144px)/.90 "Marcellus", serif;
   letter-spacing: -.04em;
   text-transform: none;
   text-shadow: 0 2px 25px #10170f2b;
@@ -116,7 +116,7 @@ body:has(.exteriors-showcase[data-pinned="true"]) header.fixed a { border-color:
 .exteriors-caption h3 span { display: block; }
 .exteriors-caption h3 .exteriors-title-last { margin-left: .65em; font-style: italic; font-weight: 300; }
 .exteriors-description { width: clamp(240px, 25vw, 365px); padding-bottom: 5px; }
-.exteriors-mood { font: 300 italic clamp(24px, 2.3vw, 36px)/1.2 "Cormorant Garamond", serif; margin: 0 0 18px; }
+.exteriors-mood { font: 300 italic clamp(24px, 2.3vw, 36px)/1.2 "Marcellus", serif; margin: 0 0 18px; }
 .exteriors-body { font-size: 14px; line-height: 1.8; font-weight: 300; color: #f6f3e9c9; margin: 0; max-width: 340px; }
 .exteriors-footer { position: absolute; inset: auto var(--exteriors-gutter) 36px; display: flex; align-items: flex-end; gap: 7vw; }
 .exteriors-chapters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; flex: 1; }

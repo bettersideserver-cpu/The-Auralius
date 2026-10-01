@@ -19,12 +19,17 @@ Upload the CONTENTS of this folder (not the folder itself) to any static host:
   GitHub Pages                         — commit the contents to the repo
   Any cPanel / FTP host                — upload into public_html
 
-A _redirects file is included for Netlify and Cloudflare Pages, so deep links
-fall back to the single page instead of 404ing. Other hosts ignore it safely.
+A _redirects file is included for Netlify and Cloudflare Pages. Unknown routes
+fall back to the home page; the five page folders serve their own index.html.
 
 What's inside
 -------------
-  index.html          the page
+  index.html          home page, with links to the five pages below
+  location/           Location page (redirects into its static export)
+  villas/             The Villas page
+  amenities/          Amenities page
+  plans/              Plans page
+  developers/         Developers page
   assets/site.js      original site export, with the estate scene connected below
   assets/estate-scene.js   editable scroll transitions and road frame player
   assets/estate-scene.css  pinned scene, image alignment and responsive styling
@@ -32,6 +37,8 @@ What's inside
   assets/exteriors-scene.css  full-screen exterior showcase and mobile layout
   assets/wordmark.js       hero name with the AURA / KASAU hover swap
   assets/wordmark.css      rolling animation, fixed letter positions and focus styling
+  assets/inner-redesign.css  page-specific layouts and shared styling for the five inner pages
+  assets/scrollbar.css        keeps scrolling while hiding the browser scrollbar
   evening.webp        the first hillside image revealed through the clouds
   Evening-1.webp      the second hillside image, with the villa lights on
   night.webp          the final hillside image
@@ -44,6 +51,13 @@ What's inside
 
 Editing text or images
 ----------------------
+Typography uses two Google Fonts throughout the site: Marcellus for headings
+and wordmarks, and Jost for body text and navigation.
+
+The five inner pages use distinct responsive layouts from inner-redesign.css.
+Their copy, images, links, floor-plan controls and enquiry forms remain in the
+compiled page bundles. The former Runable badge and loader are not included.
+
 Swap a picture by replacing the file in images/ with one of the same name.
 Copy lives inside assets/site.js, which is minified — editing it by hand is
 possible but unpleasant. Come back to Runable for wording or layout changes
