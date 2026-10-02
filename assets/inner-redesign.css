@@ -186,14 +186,20 @@ body.inner-page .reveal-scale img {
 /* Location: atlas-like opening, then a travel journal and route board. */
 body.page-location #top {
   grid-template-columns: 44% 56%;
-  min-height: min(790px, calc(100svh - 78px));
+  grid-template-rows: minmax(0, 1fr);
+  height: calc(100svh - 78px);
+  min-height: 0;
   background: #e8e8dc;
 }
 
 body.page-location #top > img:first-child {
   grid-column: 2;
   grid-row: 1;
-  object-position: 57% center;
+  object-position: center;
+  background-color: #213a2f;
+  background-image: linear-gradient(rgba(16, 36, 29, .28), rgba(16, 36, 29, .28)), url("../location/auralius-location-static/images/hero-satellite-clean.png");
+  background-position: center;
+  background-size: cover;
 }
 
 body.page-location #top > div:last-child {
@@ -683,6 +689,7 @@ body.inner-page footer span { color: #e7e0d3 !important; }
 
 @media (max-width: 1100px) {
   body.inner-page header > div { min-height: 70px; }
+  body.page-location #top { height: calc(100svh - 70px); }
   body.inner-page #top h1 { font-size: clamp(3rem, 7vw, 5rem); }
   body.page-villas #top > div:last-child { width: min(700px, 75%); }
   body.page-developers #story > div > div:last-child > div:last-child { columns: 1; }
@@ -717,6 +724,22 @@ body.inner-page footer span { color: #e7e0d3 !important; }
   body.inner-page #top a[aria-label^="Scroll"] { margin-top: 28px; }
   body.page-location #top > div:last-child,
   body.page-plans #top > div:last-child { background: #e8e8dc; }
+  body.page-location #top > img:first-child {
+    flex: 0 0 42%;
+    height: 42%;
+    min-height: 0;
+  }
+  body.page-location #top > div:last-child {
+    flex: 1 1 58%;
+    padding: 24px 25px;
+  }
+  body.page-location #top h1 {
+    margin-top: 10px;
+    font-size: clamp(2.3rem, 10vw, 3.5rem);
+  }
+  body.page-location #top .rule { margin-top: 16px; }
+  body.page-location #top p.body-copy { margin-top: 14px; line-height: 1.45; }
+  body.page-location #top a[aria-label^="Scroll"] { margin-top: 16px; }
   body.page-developers #top > div:last-child { background: #25352c; }
   body.page-villas #top {
     display: block;
@@ -896,6 +919,14 @@ body.page-location #location > div:nth-child(2) > div:nth-child(2) > div:first-c
   max-height: 520px;
   color: #806e50;
 }
+body.page-location #location .location-connectivity-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
 body.page-location #location svg g[fill="#fcfcf9"] { fill: #26372b; }
 body.page-location #location > div:nth-child(2) > div:nth-child(2) > div:last-child {
   grid-column: 1 / -1;
@@ -1023,4 +1054,97 @@ body.inner-page #connect .body-copy {
     margin-top: 0;
     padding-top: 80px;
   }
+}
+
+/* Plans journey: estate drawing in the hero, residence drawings, collections. */
+body.page-plans main {
+  display: flex;
+  flex-direction: column;
+}
+body.page-plans main > #top { order: 1; }
+body.page-plans main > #site-plan { order: 2; }
+body.page-plans main > #floor-plans { order: 3; }
+body.page-plans main > #pick { order: 4; }
+body.page-plans main > #connect { order: 5; }
+
+body.page-plans #top {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: none;
+  background: #e8e8dc;
+}
+body.page-plans #top > img:first-child { display: none; }
+body.page-plans #top > div.plans-hero-copy {
+  order: 1;
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  padding: clamp(48px, 5vw, 85px) clamp(24px, 5vw, 90px) 26px;
+  text-align: left;
+}
+body.page-plans #top > .plans-hero-copy > p:first-child { color: #9d8159; }
+body.page-plans #top h1 {
+  max-width: 1150px;
+  font-size: clamp(3.3rem, 5.2vw, 6.4rem);
+}
+body.page-plans #top p.body-copy {
+  max-width: 760px;
+  margin-top: 18px;
+}
+body.page-plans #top .rule { margin-top: 22px; }
+body.page-plans #top a[aria-label^="Scroll"] { margin-top: 22px; }
+
+body.page-plans #site-plan,
+body.page-plans #top > #site-plan {
+  order: 2;
+  width: 100%;
+  padding: 15px clamp(24px, 5vw, 90px) clamp(55px, 6vw, 90px);
+  background: #e8e8dc;
+}
+body.page-plans #site-plan > div {
+  display: block;
+  max-width: 1600px;
+  padding: 0;
+}
+body.page-plans #site-plan > div > div:first-child {
+  display: flex;
+  align-items: baseline;
+  gap: 22px;
+  margin-bottom: 22px;
+  text-align: left;
+}
+body.page-plans #site-plan > div > div:first-child h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.1vw, 2.2rem);
+}
+body.page-plans #site-plan > div > div:first-child .rule-bronze { display: none; }
+body.page-plans #site-plan > div > div:nth-child(2) {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+body.page-plans #site-plan button {
+  padding: clamp(8px, 1.2vw, 18px);
+  border: 1px solid #c5c9bc;
+  background: #fbfcf8;
+  box-shadow: 0 25px 60px rgba(28, 46, 30, .13);
+}
+body.page-plans #site-plan button img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  body.page-plans #top > .plans-hero-copy { padding: 46px 24px 20px; }
+  body.page-plans #top h1 { font-size: clamp(2.7rem, 11vw, 4.8rem); }
+  body.page-plans #site-plan,
+  body.page-plans #top > #site-plan { padding: 10px 24px 55px; }
+  body.page-plans #site-plan > div > div:first-child {
+    display: block;
+    margin-bottom: 16px;
+  }
+  body.page-plans #site-plan > div > div:first-child h2 { margin-top: 8px; }
 }

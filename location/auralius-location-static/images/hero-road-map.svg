@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1000" role="img" aria-labelledby="map-title map-desc">
+  <title id="map-title">Illustrated road map to The Auralius</title>
+  <desc id="map-desc">Animated hillside roads lead to one highlighted location near Dharampur.</desc>
+  <defs>
+    <linearGradient id="forest" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#233d32"/>
+      <stop offset=".52" stop-color="#294638"/>
+      <stop offset="1" stop-color="#152b26"/>
+    </linearGradient>
+    <linearGradient id="ridge" x1="0" y1="0" x2="1" y2=".75">
+      <stop offset="0" stop-color="#71805a" stop-opacity=".42"/>
+      <stop offset=".55" stop-color="#344b3a" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#0f2924" stop-opacity=".52"/>
+    </linearGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c9c7a8"/>
+      <stop offset=".5" stop-color="#e5dbc2"/>
+      <stop offset="1" stop-color="#aaa98d"/>
+    </linearGradient>
+    <filter id="soft-glow" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <pattern id="grain" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="8" r=".7" fill="#e2d4af" opacity=".12"/>
+      <circle cx="29" cy="22" r=".6" fill="#0d211d" opacity=".24"/>
+      <circle cx="15" cy="34" r=".5" fill="#e2d4af" opacity=".1"/>
+    </pattern>
+    <style>
+      .contour { fill: none; stroke: #d4c796; stroke-width: 1.2; opacity: .12; }
+      .minor-road { fill: none; stroke: #d6b981; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; opacity: .38; }
+      .road-base { fill: none; stroke: #172c27; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; opacity: .8; }
+      .main-road { fill: none; stroke: #e8c98b; stroke-width: 5.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1700; stroke-dashoffset: 1700; animation: route-draw 3.1s cubic-bezier(.3,.02,.18,1) .25s forwards; }
+      .approach { fill: none; stroke: #f4d994; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 500; stroke-dashoffset: 500; animation: route-draw 1.6s ease 1.45s forwards; }
+      .marker { opacity: 0; animation: marker-in .65s ease 2.5s forwards; }
+      .halo { transform-box: fill-box; transform-origin: center; animation: beacon 3s ease-out 3s infinite; }
+      @keyframes route-draw { to { stroke-dashoffset: 0; } }
+      @keyframes marker-in { to { opacity: 1; } }
+      @keyframes beacon { 0% { transform: scale(.5); opacity: .48; } 75%, 100% { transform: scale(2.2); opacity: 0; } }
+      @media (prefers-reduced-motion: reduce) {
+        .main-road, .approach { animation: none; stroke-dashoffset: 0; }
+        .marker { animation: none; opacity: 1; }
+        .halo { animation: none; opacity: .22; }
+      }
+    </style>
+  </defs>
+
+  <g class="contour">
+    <path d="M-70 62C72 4 175 68 297 23S547-12 672 45 846 74 966 5"/>
+    <path d="M-75 90C68 25 173 104 299 54S546 13 670 73 852 107 970 35"/>
+    <path d="M-65 123C63 60 166 135 292 85S539 43 665 106 848 137 962 68"/>
+    <path d="M-62 155C56 92 166 164 287 119S527 77 657 139 843 171 960 104"/>
+    <path d="M-65 189C52 131 161 199 281 151S522 107 650 171 842 203 965 139"/>
+    <path d="M-68 225C47 169 157 230 279 187S513 144 646 206 838 236 965 174"/>
+    <path d="M-83 297C53 217 181 287 306 231S508 194 619 245 823 297 966 218"/>
+    <path d="M-85 331C54 252 185 318 306 266S505 225 620 281 824 329 968 251"/>
+    <path d="M-87 367C56 289 188 353 309 301S505 258 620 315 822 363 970 287"/>
+    <path d="M-85 402C64 327 192 389 309 338S499 296 618 352 827 397 969 322"/>
+    <path d="M-89 439C66 364 192 424 310 376S496 334 617 386 832 431 971 357"/>
+    <path d="M-83 477C69 403 195 462 311 413S498 367 617 421 826 467 965 393"/>
+    <path d="M-80 514C75 440 197 498 312 448S495 406 618 459 829 504 965 432"/>
+    <path d="M-83 554C76 477 199 534 314 486S493 444 619 497 830 541 967 468"/>
+    <path d="M-81 589C82 517 203 571 318 522S502 481 619 533 827 579 964 504"/>
+    <path d="M-82 626C84 554 205 607 322 559S509 515 627 570 833 613 965 539"/>
+    <path d="M-86 664C89 593 213 645 332 593S514 553 638 603 833 649 962 578"/>
+    <path d="M-85 704C91 632 214 682 335 632S519 589 647 639 837 686 964 613"/>
+    <path d="M-86 742C99 667 218 723 343 668S527 626 653 678 836 722 962 649"/>
+    <path d="M-80 780C103 707 225 761 352 707S538 665 660 716 837 761 962 691"/>
+    <path d="M-83 819C111 748 228 800 359 745S544 702 667 754 845 798 967 727"/>
+    <path d="M-80 856C111 785 238 836 364 784S550 737 674 792 845 834 969 765"/>
+    <path d="M-82 894C111 822 242 876 371 821S555 776 683 828 848 872 969 801"/>
+  </g>
+
+  <g class="minor-road">
+    <path d="M-25 93C76 118 119 183 162 241S222 329 283 317 362 243 430 255 519 332 569 327"/>
+    <path d="M70-30C90 78 40 155 78 226S182 346 141 428 75 515 100 624 221 720 192 852"/>
+    <path d="M-31 544C81 553 175 542 258 481S377 401 471 426 582 459 683 393 806 331 935 354"/>
+    <path d="M-10 755C117 712 171 615 287 593S464 636 536 565 636 517 732 549 827 676 934 641"/>
+    <path d="M147 1028C223 932 271 834 385 801S526 758 603 685 734 650 913 708"/>
+    <path d="M412-20C404 108 344 176 370 292S468 417 433 526 325 695 358 819"/>
+    <path d="M813-20C782 128 846 242 797 341S681 461 711 544 833 687 781 805 751 936 808 1030"/>
+    <path d="M245 237C242 317 198 365 216 434S316 526 330 611"/>
+    <path d="M627 115C729 135 757 221 724 282S630 352 625 410"/>
+  </g>
+
+  <path class="road-base" d="M455-40C484 45 463 116 502 169S540 257 515 321 547 395 522 470 526 558 472 615 375 657 349 725 312 829 347 911 420 974 391 1040"/>
+  <path class="main-road" d="M455-40C484 45 463 116 502 169S540 257 515 321 547 395 522 470 526 558 472 615 375 657 349 725 312 829 347 911 420 974 391 1040"/>
+  <path class="approach" d="M309 682C359 658 391 608 444 582S493 522 522 470"/>
+
+  <g class="marker">
+    <circle class="halo" cx="522" cy="470" r="28" fill="#f4d994" opacity=".45"/>
+    <circle cx="522" cy="470" r="30" fill="#f4d994" opacity=".14"/>
+    <circle cx="522" cy="470" r="15" fill="#f4d994"/>
+    <circle cx="522" cy="470" r="6" fill="#26372b"/>
+    <path d="M543 470h37" stroke="#f4d994" stroke-width="1.5"/>
+    <rect x="580" y="444" width="206" height="52" rx="2" fill="#1c3029" stroke="#d9bd82" stroke-width="1"/>
+    <text x="600" y="476" fill="#f6e6bf" font-family="Georgia,serif" font-size="19" letter-spacing="2.2">THE AURALIUS</text>
+  </g>
+  <path fill="url(#grain)" d="M0 0h900v1000H0z" pointer-events="none"/>
+</svg>

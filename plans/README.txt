@@ -11,4 +11,5 @@ Hosting with clean URLs (e.g. /plans) needs an SPA fallback to index.html:
  - Nginx: try_files $uri /index.html;
 
 Replace floor plans: images/plans/site-plan.png, ground-floor.png, first-floor.png, attic-floor.png (same filenames).
+The shared ../assets/plans-layout.js places the site plan in the hero and shows floor plans before the villa collections.
 Enquiry form opens the visitor's email app (mailto: info@suryarealty.co.in).
