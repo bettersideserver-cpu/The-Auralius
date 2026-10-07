@@ -39,6 +39,11 @@ What's inside
   assets/wordmark.css      rolling animation, fixed letter positions and focus styling
   assets/inner-redesign.css  page-specific layouts and shared styling for the five inner pages
   assets/scrollbar.css        keeps scrolling while hiding the browser scrollbar
+
+  assets/brochure-updates.css  styling for the PDF-led content additions
+  assets/brochure-updates.js   homepage facts, interactive villa gallery, amenities and nearby places
+  assets/plans-brochure.js     Block and Unit cards for all 12 villa layouts
+  assets/auralius-mark.svg    gold brand mark based on the booklet artwork
   evening.webp        the first hillside image revealed through the clouds
   Evening-1.webp      the second hillside image, with the villa lights on
   night.webp          the final hillside image
@@ -57,6 +62,11 @@ and wordmarks, and Jost for body text and navigation.
 The five inner pages use distinct responsive layouts from inner-redesign.css.
 Their copy, images, links, floor-plan controls and enquiry forms remain in the
 compiled page bundles. The former Runable badge and loader are not included.
+
+The brochure additions are separate from the compiled page bundles. The Plans
+selector reads 36 drawings under plans/images/brochure/ (ground, first, attic
+for each of 12 units). Villa elevations are under villas/images/brochure/.
+The homepage and location page use imagery from the supplied technical booklet.
 
 Swap a picture by replacing the file in images/ with one of the same name.
 Copy lives inside assets/site.js, which is minified — editing it by hand is

@@ -21,7 +21,7 @@
 
     const scrollCue = heroContent.querySelector('a[aria-label^="Scroll"]');
     if (scrollCue) {
-      scrollCue.href = "#floor-plans";
+      scrollCue.href = document.getElementById("brochure-floor-plans") ? "#brochure-floor-plans" : "#floor-plans";
       scrollCue.setAttribute("aria-label", "Scroll to floor plans");
     }
   }

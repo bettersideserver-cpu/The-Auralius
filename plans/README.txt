@@ -10,6 +10,7 @@ Hosting with clean URLs (e.g. /plans) needs an SPA fallback to index.html:
  - Apache: FallbackResource /index.html
  - Nginx: try_files $uri /index.html;
 
-Replace floor plans: images/plans/site-plan.png, ground-floor.png, first-floor.png, attic-floor.png (same filenames).
+Replace the displayed estate drawing at images/plans/site-plan-brochure.webp.
 The shared ../assets/plans-layout.js places the site plan in the hero and shows floor plans before the villa collections.
+The shared ../assets/plans-brochure.js displays five Block cards, the available Unit A/B/C cards, and three floor choices. It uses the 36 floor plans for all 12 villas from the technical booklet in images/brochure/. Select a drawing to enlarge it.
 Enquiry form opens the visitor's email app (mailto: info@suryarealty.co.in).

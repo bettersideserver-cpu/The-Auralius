@@ -11,8 +11,8 @@
   overflow: hidden;
   isolation: isolate;
 }
-/* The PNGs were composed at 1920 × 1080. Crop every still to that same
-   reference before covering the viewport, so the road stays registered. */
+/* Crop each high-resolution still to a shared 16:9 stage before covering the
+   viewport, so the road stays registered through the scene transition. */
 .estate-stage {
   position: absolute;
   left: 50%;

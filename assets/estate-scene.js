@@ -163,9 +163,9 @@
       h("div", { className: "estate-sticky" },
         layer("stage", "estate-stage", [
           h(React.Fragment, { key: "stills" },
-            still("evening", "evening.webp"),
-            still("lights", "Evening-1.webp"),
-            still("night", "night.webp")),
+            still("evening", "images/brochure-aerial.webp?v=20261007-hires"),
+            still("lights", "images/brochure-aerial.webp?v=20261007-hires"),
+            still("night", "night.webp?v=20261007-hires")),
           h("video", {
             key: "road", "data-layer": "road", className: "estate-road",
             muted: true, loop: true, playsInline: true, preload: "auto",
