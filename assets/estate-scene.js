@@ -68,6 +68,7 @@
       const approach = find("approach");
       const exit = find("exit");
       const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const mobile = window.matchMedia("(max-width: 1023px) and (orientation: portrait)");
       const player = roadPlayer(road);
       let pending = 0;
 
@@ -107,7 +108,7 @@
         cloudBottom.style.transform = reduced ? "none"
           : `translate3d(${6 * clear}%,${52 * clear}%,0) scale(${1 + 0.18 * clear})`;
         // All landscape layers share the same camera and 16:9 composition.
-        stage.style.transform = `translate(-50%,-50%) scale(${reduced ? 1 : 1.035 - 0.035 * smooth(progress, 0, 0.60)})`;
+        stage.style.transform = `translate(-50%,-50%) scale(${reduced || mobile.matches ? 1 : 1.035 - 0.035 * smooth(progress, 0, 0.60)})`;
         opacity(snow, reduced ? 0 : smooth(dark, 0.45, 1));
         snow.style.setProperty("--snow-play-state", visible && !document.hidden && dark > 0.45 ? "running" : "paused");
         // Once night is fully in, the still frame hands off to the looping
@@ -161,7 +162,7 @@
 
     return h("section", { id: "estate", ref: rootRef, className: "estate-scene", "aria-label": "The Auralius hillside, from evening to night" },
       h("div", { className: "estate-sticky" },
-        layer("stage", "estate-stage", [
+        layer("media", "estate-media", layer("stage", "estate-stage", [
           h(React.Fragment, { key: "stills" },
             still("evening", "images/brochure-aerial.webp?v=20261007-hires"),
             still("lights", "images/brochure-aerial.webp?v=20261007-hires"),
@@ -173,7 +174,7 @@
           },
             h("source", { src: "road-night-loop.webm", type: "video/webm" }),
             h("source", { src: "road-night-loop.mp4", type: "video/mp4" }))
-        ]),
+        ])),
         layer("cloud-top", "estate-cloud estate-cloud-top cloud-bank-top", h("img", { src: "images/cloud-1.webp", alt: "" })),
         layer("cloud-bottom", "estate-cloud estate-cloud-bottom cloud-bank-bottom", h("img", { src: "images/cloud-2.webp", alt: "" })),
         layer("veil", "estate-veil"),

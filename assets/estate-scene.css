@@ -11,6 +11,10 @@
   overflow: hidden;
   isolation: isolate;
 }
+.estate-media {
+  position: absolute;
+  inset: 0;
+}
 /* Crop each high-resolution still to a shared 16:9 stage before covering the
    viewport, so the road stays registered through the scene transition. */
 .estate-stage {
@@ -106,6 +110,66 @@
   .estate-stats .stat-plate { font-size: .58rem; padding: .7rem .85rem; }
   .estate-approach { bottom: 7svh; }
   .estate-approach .body-copy { font-size: .9rem; line-height: 1.7; margin-top: 1rem; }
+}
+@media (max-width: 1023px) and (orientation: portrait) {
+  .estate-sticky {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    gap: 12px;
+    padding-block: 112px calc(84px + env(safe-area-inset-bottom, 0px));
+  }
+  .estate-media {
+    position: relative;
+    inset: auto;
+    grid-row: 2;
+    min-height: 0;
+    container-type: size;
+  }
+  /* The source stills are 3:2. Fit the entire composition in the space
+     between the copy, rather than cropping it to a portrait viewport. */
+  .estate-stage {
+    width: min(100cqw, 150cqh);
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+  .estate-still { object-fit: contain; }
+  /* The road loop is the central 16:9 crop of the same 3:2 landscape. */
+  .estate-road {
+    top: 7.8125%;
+    bottom: auto;
+    height: 84.375%;
+  }
+  .estate-title {
+    position: relative;
+    top: auto;
+    right: auto;
+    grid-row: 1;
+    max-width: 100%;
+  }
+  .estate-title h2 { margin-top: .75rem; }
+  .estate-stats { margin-top: 1rem; }
+  .estate-approach {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    grid-row: 3;
+    max-width: 100%;
+  }
+  .estate-approach .body-copy {
+    margin-top: .75rem;
+    font-size: .85rem;
+    line-height: 1.6;
+  }
+}
+@media (min-width: 641px) and (max-width: 1023px) and (orientation: portrait) {
+  .estate-sticky { padding-top: 136px; }
+}
+@media (max-width: 640px) and (max-height: 700px) and (orientation: portrait) {
+  .estate-sticky { gap: 8px; }
+  .estate-title h2 { font-size: 1.4rem; margin-top: .5rem; }
+  .estate-stats { margin-top: .75rem; }
+  .estate-stats .stat-plate { padding: .6rem .75rem; }
+  .estate-approach .body-copy { margin-top: .5rem; font-size: .75rem; line-height: 1.5; }
 }
 @media (prefers-reduced-motion: reduce) {
   .estate-stage, .estate-cloud, .estate-title { will-change: auto; }

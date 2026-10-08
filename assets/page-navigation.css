@@ -1,7 +1,7 @@
 .mobile-page-nav {
   position: fixed;
-  right: 1.25rem;
-  top: 5.25rem;
+  right: max(1rem, env(safe-area-inset-right, 0px));
+  top: 1.65rem;
   z-index: 100;
   font-family: Jost, sans-serif;
 }
@@ -55,6 +55,36 @@
 
 .mobile-page-nav a:hover {
   background: #eeeae0;
+}
+
+@media (max-width: 1023px) {
+  /* A backdrop filter makes fixed descendants relative to the header.
+     Keep the enquiry link anchored to the viewport instead. */
+  #root header { backdrop-filter: none !important; }
+
+  #root header > .gutter > div > a:not(:last-child) { display: none; }
+
+  #root header > .gutter > div > a[href="#register"]:last-child {
+    position: fixed;
+    top: auto;
+    right: max(1rem, env(safe-area-inset-right, 0px));
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    z-index: 100;
+    padding: 1rem 1.5rem;
+    border: 1px solid #b9a57d;
+    background: #252a20;
+    color: #fcfcf9 !important;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, .24);
+  }
+
+  #root header > .gutter > div > a[href="#register"]:last-child:hover {
+    background: #39422f;
+  }
+
+  .mobile-page-nav summary {
+    padding-inline: .9rem;
+    letter-spacing: .1em;
+  }
 }
 
 @media (min-width: 1024px), print {
