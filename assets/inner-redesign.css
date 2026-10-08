@@ -365,6 +365,25 @@ body.page-villas #bar > div:nth-child(2) > div:first-child {
   gap: 8vw;
 }
 body.page-villas #bar > div:nth-child(2) > div:nth-child(2) { gap: 12px; }
+body.page-villas #bar .reveal-scale > img { display: block; }
+/* Keep both complete room photographs inside their existing card sizes. */
+body.page-villas #bedrooms img[src$="villa-bedroom.jpg"],
+body.page-villas #bar img[src$="villa-bag.jpg"] {
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  background: #26372b;
+}
+@media (min-width: 768px) {
+  body.page-villas #bar > div:nth-child(2) > div:nth-child(2) > div:last-child > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+}
 
 /* Amenities: a resort guide with a generous photograph and numbered index. */
 body.page-amenities #top {
@@ -1053,6 +1072,10 @@ body.inner-page #connect .body-copy {
     min-height: 890px;
     margin-top: 0;
     padding-top: 80px;
+  }
+  body.page-villas #bedrooms > div > div:last-child > div:last-child {
+    width: 100%;
+    margin-inline: 0;
   }
 }
 
