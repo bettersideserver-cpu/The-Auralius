@@ -1,0 +1,86 @@
+
+      <div class="brochure-wrap">
+        <p class="brochure-eyebrow">The residence drawings</p>
+        <div class="brochure-section-heading">
+          <h2>Every villa.<br>Every level.</h2>
+          <p>Explore ground, first and attic floor drawings for all five blocks. Open any drawing to zoom into room labels, dimensions and architectural details.</p>
+        </div>
+
+        <div class="brochure-plan-selector">
+          <div class="brochure-plan-picker-heading"><span>01 / Choose a block</span><span>Five distinct blocks</span></div>
+          <div class="brochure-block-grid" role="group" aria-label="Choose a block">
+            
+              <button type="button" data-block="1" aria-pressed="true">
+                <span class="brochure-block-number">01</span>
+                <strong>Block 01</strong>
+                <small>3 private villas <span aria-hidden="true">↗</span></small>
+              </button>
+              <button type="button" data-block="2" aria-pressed="false">
+                <span class="brochure-block-number">02</span>
+                <strong>Block 02</strong>
+                <small>2 private villas <span aria-hidden="true">↗</span></small>
+              </button>
+              <button type="button" data-block="3" aria-pressed="false">
+                <span class="brochure-block-number">03</span>
+                <strong>Block 03</strong>
+                <small>3 private villas <span aria-hidden="true">↗</span></small>
+              </button>
+              <button type="button" data-block="4" aria-pressed="false">
+                <span class="brochure-block-number">04</span>
+                <strong>Block 04</strong>
+                <small>2 private villas <span aria-hidden="true">↗</span></small>
+              </button>
+              <button type="button" data-block="5" aria-pressed="false">
+                <span class="brochure-block-number">05</span>
+                <strong>Block 05</strong>
+                <small>2 private villas <span aria-hidden="true">↗</span></small>
+              </button>
+          </div>
+
+          <div class="brochure-plan-picker-heading brochure-unit-heading"><span>02 / Choose a unit</span><span class="brochure-available-count">3 units in Block 01</span></div>
+          <div class="brochure-unit-grid" role="group" aria-label="Choose a unit">
+            
+              <button type="button" data-unit="A" aria-pressed="true">
+                <span class="brochure-unit-letter">A</span>
+                <span class="brochure-unit-label"><strong>Unit A</strong><small>View residence</small></span>
+                <span class="brochure-unit-arrow" aria-hidden="true">↗</span>
+              </button>
+              <button type="button" data-unit="B" aria-pressed="false">
+                <span class="brochure-unit-letter">B</span>
+                <span class="brochure-unit-label"><strong>Unit B</strong><small>View residence</small></span>
+                <span class="brochure-unit-arrow" aria-hidden="true">↗</span>
+              </button>
+              <button type="button" data-unit="C" aria-pressed="false">
+                <span class="brochure-unit-letter">C</span>
+                <span class="brochure-unit-label"><strong>Unit C</strong><small>View residence</small></span>
+                <span class="brochure-unit-arrow" aria-hidden="true">↗</span>
+              </button>
+          </div>
+        </div>
+
+        <div class="brochure-plan-display">
+          <div class="brochure-plan-toolbar">
+            <div>
+              <p class="brochure-eyebrow">Selected residence</p>
+              <h3 class="brochure-plan-selection">Block 01 <span>/ Unit A</span></h3>
+            </div>
+            <div class="brochure-plan-tabs" role="tablist" aria-label="Floor level">
+              <button type="button" role="tab" data-floor="ground" aria-selected="true">Ground Floor</button><button type="button" role="tab" data-floor="first" aria-selected="false">First Floor</button><button type="button" role="tab" data-floor="attic" aria-selected="false">Attic Floor</button>
+            </div>
+          </div>
+          <div class="brochure-plan-board">
+            <button class="brochure-plan-image-button" type="button" aria-label="Enlarge floor plan"><img alt=""></button>
+            <div class="brochure-plan-board-footer"><span class="brochure-plan-caption"></span><span>Select drawing to zoom <span aria-hidden="true">↗</span></span></div>
+          </div>
+          <div class="brochure-plan-detail-row"><p class="brochure-plan-applicability"></p><a class="brochure-plan-download" download>Download full-resolution drawing ↓</a></div>
+        </div>
+      </div>
+      <dialog class="brochure-plan-dialog" aria-labelledby="floor-drawing-title">
+        <div class="floor-viewer-heading"><span id="floor-drawing-title" class="brochure-plan-dialog-title"></span><button type="button" data-viewer-close>Close ×</button></div>
+        <div class="floor-viewer-toolbar">
+          <div class="floor-viewer-zoom"><button type="button" data-zoom="out" aria-label="Zoom out">−</button><output aria-live="polite">100%</output><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="fit">Fit</button><button type="button" data-zoom="original">Original size</button></div>
+          <a class="floor-viewer-download" download>Download drawing ↓</a>
+        </div>
+        <div class="floor-viewer-viewport" tabindex="0" aria-label="Floor drawing. Use zoom controls and scroll to explore."><div class="floor-viewer-canvas"><img alt="" draggable="false"></div></div>
+        <p class="floor-viewer-help" role="status">Use + and − to zoom. Drag, scroll or swipe to explore. Press Escape to close.</p>
+      </dialog>

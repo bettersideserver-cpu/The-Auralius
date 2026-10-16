@@ -1,0 +1,242 @@
+[
+  {
+    "block": 1,
+    "floor": "ground",
+    "source": "The Auralius Technical Booklet-7.png",
+    "source_half": "right",
+    "crop": [
+      739,
+      514,
+      4996,
+      4858
+    ],
+    "width": 4257,
+    "height": 4344,
+    "full": "plans/images/floormaps/block-1-ground.webp",
+    "lossless_verified": true
+  },
+  {
+    "block": 1,
+    "floor": "first",
+    "source": "The Auralius Technical Booklet-8.png",
+    "source_half": "left",
+    "crop": [
+      410,
+      515,
+      4747,
+      4912
+    ],
+    "width": 4337,
+    "height": 4397,
+    "full": "plans/images/floormaps/block-1-first.webp",
+    "lossless_verified": true
+  },
+  {
+    "block": 1,
+    "floor": "attic",
+    "source": "The Auralius Technical Booklet-8.png",
+    "source_half": "right",
+    "crop": [
+      929,
+      514,
+      4996,
+      4925
+    ],
+    "width": 4067,
+    "height": 4411,
+    "full": "plans/images/floormaps/block-1-attic.webp",
+    "lossless_verified": true
+  },
+  {
+    "block": 2,
+    "floor": "ground",
+    "source": "The Auralius Technical Booklet-10.png",
+    "source_half": "right",
+    "crop": [
+      800,
+      515,
+      4996,
+      4915
+    ],
+    "width": 4196,
+    "height": 4400,
+    "full": "plans/images/floormaps/block-2-ground.webp",
+    "lossless_verified": true
+  },
+  {
+    "block": 2,
+    "floor": "first",
+    "source": "The Auralius Technical Booklet-11.png",
+    "source_half": "left",
+    "crop": [
+      0,
+      0,
+      5403,
+      5405
+    ],
+    "width": 5403,
+    "height": 5405,
+    "full": "plans/images/floormaps/block-2-first.webp",
+    "lossless_verified": true
+  },
+  {
+    "block": 2,
+    "floor": "attic",
+    "source": "The Auralius Technical Booklet-11.png",
+    "source_half": "right",
+    "crop": [
+      0,
+      0,
+      5403,
+      5405
+    ],
+    "width": 5403,
+    "height": 5405,
+    "full": "plans/images/floormaps/block-2-attic.webp",
+    "lossless_verified": true
+  },
+  {
+    "block": 3,
+    "floor": "ground",
+    "source": "The Auralius Technical Booklet-13.png",
+    "source_half": "right",
+    "crop": [
+      655,
+      515,
+      4996,
+      5057
+    ],
+    "width": 4341,
+    "height": 4542,
+    "full": "plans/images/floormaps/block-3-ground.webp",
+    "lossless_verified": true
+  },
+  {
+    "block": 3,
+    "floor": "first",
+    "source": "The Auralius Technical Booklet-14.png",
+    "source_half": "left",
+    "crop": [
+      410,
+      514,
+      4736,
+      5057
+    ],
+    "width": 4326,
+    "height": 4543,
+    "full": "plans/images/floormaps/block-3-first.webp",
+    "lossless_verified": true
+  },
+  {
+    "block": 3,
+    "floor": "attic",
+    "source": "The Auralius Technical Booklet-14.png",
+    "source_half": "right",
+    "crop": [
+      577,
+      515,
+      4996,
+      4898
+    ],
+    "width": 4419,
+    "height": 4383,
+    "full": "plans/images/floormaps/block-3-attic.webp",
+    "lossless_verified": true
+  },
+  {
+    "block": 4,
+    "floor": "ground",
+    "source": "The Auralius Technical Booklet-16.png",
+    "source_half": "right",
+    "crop": [
+      423,
+      514,
+      5050,
+      4866
+    ],
+    "width": 4627,
+    "height": 4352,
+    "full": "plans/images/floormaps/block-4-ground.webp",
+    "lossless_verified": true
+  },
+  {
+    "block": 4,
+    "floor": "first",
+    "source": "The Auralius Technical Booklet-17.png",
+    "source_half": "left",
+    "crop": [
+      0,
+      0,
+      5403,
+      5405
+    ],
+    "width": 5403,
+    "height": 5405,
+    "full": "plans/images/floormaps/block-4-first.webp",
+    "lossless_verified": true
+  },
+  {
+    "block": 4,
+    "floor": "attic",
+    "source": "The Auralius Technical Booklet-17.png",
+    "source_half": "right",
+    "crop": [
+      0,
+      0,
+      5403,
+      5405
+    ],
+    "width": 5403,
+    "height": 5405,
+    "full": "plans/images/floormaps/block-4-attic.webp",
+    "lossless_verified": true
+  },
+  {
+    "block": 5,
+    "floor": "ground",
+    "source": "The Auralius Technical Booklet-19.png",
+    "source_half": "right",
+    "crop": [
+      423,
+      514,
+      5050,
+      4866
+    ],
+    "width": 4627,
+    "height": 4352,
+    "full": "plans/images/floormaps/block-5-ground.webp",
+    "lossless_verified": true
+  },
+  {
+    "block": 5,
+    "floor": "first",
+    "source": "The Auralius Technical Booklet-20.png",
+    "source_half": "left",
+    "crop": [
+      0,
+      0,
+      5403,
+      5405
+    ],
+    "width": 5403,
+    "height": 5405,
+    "full": "plans/images/floormaps/block-5-first.webp",
+    "lossless_verified": true
+  },
+  {
+    "block": 5,
+    "floor": "attic",
+    "source": "The Auralius Technical Booklet-20.png",
+    "source_half": "right",
+    "crop": [
+      0,
+      0,
+      5403,
+      5405
+    ],
+    "width": 5403,
+    "height": 5405,
+    "full": "plans/images/floormaps/block-5-attic.webp",
+    "lossless_verified": true
+  }
+]

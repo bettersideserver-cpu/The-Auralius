@@ -1,0 +1,36 @@
+/* Floor drawings retain their source pixels; the viewer zooms without cropping. */
+#brochure-floor-plans .brochure-plan-board { width: min(100%, 1320px); }
+#brochure-floor-plans .brochure-plan-image-button { min-height: 0; padding: clamp(8px, 2vw, 24px); }
+#brochure-floor-plans .brochure-plan-image-button img { width: 100%; max-width: 1150px; max-height: none; height: auto; }
+.brochure-plan-detail-row { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; width: min(100%, 1320px); margin: 22px auto 0; }
+.brochure-plan-applicability { margin: 0; color: #e2e7db; font: 400 .96rem/1.7 Jost, sans-serif; }
+.brochure-plan-download { flex-shrink: 0; color: #efd49e; font: 500 .86rem/1.6 Jost, sans-serif; text-decoration: underline; text-underline-offset: 5px; }
+#brochure-floor-plans .brochure-plan-dialog {
+  position: fixed; inset: 0; margin: auto; width: calc(100vw - 32px); max-width: 1800px;
+  height: calc(100dvh - 32px); max-height: none; padding: 0;
+  border: 1px solid #cfc5b2; background: #f9f8f4; color: #23352a; overflow: hidden;
+}
+#brochure-floor-plans .brochure-plan-dialog[open] { display: flex; flex-direction: column; }
+#brochure-floor-plans .brochure-plan-dialog::backdrop { background: rgb(0 0 0 / .8); }
+#brochure-floor-plans .brochure-plan-dialog > .floor-viewer-heading { flex-shrink: 0; margin: 0; padding: 16px 22px; border-bottom: 1px solid #ddd4c5; font: 400 clamp(1rem, 1.6vw, 1.35rem)/1.4 Marcellus, serif; }
+#brochure-floor-plans .brochure-plan-dialog > .floor-viewer-toolbar { flex-shrink: 0; flex-wrap: wrap; margin: 0; padding: 12px 22px; font-family: Jost, sans-serif; }
+.floor-viewer-zoom { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.floor-viewer-zoom output { min-width: 56px; text-align: center; font: 500 .85rem Jost, sans-serif; }
+#brochure-floor-plans .brochure-plan-dialog button { min-height: 44px; min-width: 44px; border-color: #ab9b80; letter-spacing: .03em; font-size: .78rem; }
+#brochure-floor-plans .brochure-plan-dialog button:hover { background: #e9e2d5; }
+#brochure-floor-plans .brochure-plan-dialog button:disabled { opacity: .35; cursor: default; }
+.floor-viewer-download { color: #344c37; font: 500 .85rem/1.5 Jost, sans-serif; text-underline-offset: 4px; }
+#brochure-floor-plans .brochure-plan-dialog > .floor-viewer-viewport { display: block; flex: 1; min-height: 0; margin: 0; overflow: auto; background: #e5e4df; overscroll-behavior: contain; cursor: grab; touch-action: pan-x pan-y pinch-zoom; }
+.floor-viewer-viewport.is-dragging { cursor: grabbing !important; user-select: none; }
+.floor-viewer-canvas { display: flex; align-items: center; justify-content: center; width: max-content; min-width: 100%; min-height: 100%; padding: 16px; box-sizing: border-box; }
+#brochure-floor-plans .floor-viewer-canvas img { display: block; flex: none; max-width: none; max-height: none; height: auto; margin: 0; background: #fff; box-shadow: 0 5px 20px rgb(0 0 0 / .08); }
+#brochure-floor-plans .floor-viewer-help { flex-shrink: 0; margin: 0; padding: 10px 22px; color: #485744; font: 400 .82rem/1.5 Jost, sans-serif; }
+#brochure-floor-plans .brochure-plan-dialog :focus-visible, .brochure-plan-download:focus-visible { outline: 2px solid #99743d; outline-offset: 3px; }
+@media (max-width: 640px) {
+  .brochure-plan-detail-row { flex-direction: column; gap: 12px; }
+  #brochure-floor-plans .brochure-plan-dialog { width: calc(100vw - 12px); height: calc(100dvh - 16px); }
+  #brochure-floor-plans .brochure-plan-dialog > .floor-viewer-heading,
+  #brochure-floor-plans .brochure-plan-dialog > .floor-viewer-toolbar { padding: 10px 12px; gap: 10px; }
+  .floor-viewer-zoom { gap: 5px; }
+  #brochure-floor-plans .floor-viewer-help { padding: 8px 12px; font-size: .75rem; }
+}
