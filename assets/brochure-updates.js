@@ -72,11 +72,11 @@
             <p class="brochure-eyebrow">Surya Realty portfolio</p>
             <h2>Delivered places.<br><em>What comes next.</em></h2>
           </div>
-          <p>Three delivered destinations. Three developments looking ahead. Explore the residential and commercial portfolio, including The Auralius, scheduled for delivery in November 2027.</p>
+          <p>Two delivered destinations. Four upcoming and ongoing developments. Explore the portfolio, including Opus One, Jujhar IT Building with delivery in June 2027, and The Auralius with delivery in November 2027.</p>
         </div>
         <div class="project-status-layout">
           <section class="project-status-group" aria-labelledby="project-status-delivered-heading">
-            <div class="project-status-group-heading"><h3 id="project-status-delivered-heading">Delivered</h3><span>03 projects</span></div>
+            <div class="project-status-group-heading"><h3 id="project-status-delivered-heading">Delivered</h3><span>02 projects</span></div>
             <div class="project-status-delivered-grid">
               <article class="project-status-card">
                 <div class="project-status-image"><img src="./images/projects/the-grand-walk.jpg" alt="The Grand Walk commercial building in Ludhiana" loading="lazy"></div>
@@ -93,21 +93,13 @@
                   <span class="project-status-tag">Delivered · Residential</span>
                   <h4>Alpha International City</h4>
                   <p>Jalandhar–Amritsar NH-3</p>
-                  <p class="project-description">A residential township in Amritsar with villas and apartments set within a planned community.</p>
-                </div>
-              </article>
-              <article class="project-status-card">
-                <div class="project-status-image"><img src="./images/projects/opus-one.webp" alt="Opus One residential towers, as shown in the company profile" loading="lazy"></div>
-                <div class="project-status-card-copy">
-                  <span class="project-status-tag">Delivered · Residential</span>
-                  <h4>Opus One</h4><p>Eco-City 2, New Chandigarh</p>
-                  <p class="project-description">GB Realty’s flagship luxury apartment development, part of the real estate portfolio presented by Surya Realty.</p>
+                  <p class="project-description">A residential township in Amritsar with villas and apartments, offering sizes of 250, 500, 1,100 and 2,500 square yards.</p>
                 </div>
               </article>
             </div>
           </section>
           <section class="project-status-group project-status-progress" aria-labelledby="project-status-progress-heading">
-            <div class="project-status-group-heading"><h3 id="project-status-progress-heading">Upcoming &amp; in progress</h3><span>03 projects</span></div>
+            <div class="project-status-group-heading"><h3 id="project-status-progress-heading">Upcoming &amp; in progress</h3><span>04 projects</span></div>
             <div class="project-status-upcoming-grid">
             <article class="project-status-card">
               <div class="project-status-image"><img src="./images/hero-villas.webp" alt="Architectural visual of The Auralius villas" loading="lazy"></div>
@@ -123,6 +115,14 @@
               </div>
             </article>
             <article class="project-status-card">
+              <div class="project-status-image"><img src="./images/projects/opus-one.webp" alt="Opus One residential towers, as shown in the company profile" loading="lazy"></div>
+              <div class="project-status-card-copy">
+                <span class="project-status-tag">Ongoing · Residential</span>
+                <h4>Opus One</h4><p>Eco-City 2, New Chandigarh</p>
+                <p class="project-description">GB Realty’s flagship luxury apartment development, spanning 8.75 acres in New Chandigarh.</p>
+              </div>
+            </article>
+            <article class="project-status-card">
               <div class="project-status-image"><img src="./images/projects/tangori-group-housing.webp" alt="Group housing project visual from the company profile" loading="lazy"></div>
               <div class="project-status-card-copy"><span class="project-status-tag">Upcoming · Residential</span>
                 <h4>Group Housing Project</h4><p>Tangori, SAS Nagar</p>
@@ -131,9 +131,9 @@
             </article>
             <article class="project-status-card">
               <div class="project-status-image"><img src="./images/projects/jujhar-it-building.webp" alt="Jujhar IT Building architectural visual from the company profile" loading="lazy"></div>
-              <div class="project-status-card-copy"><span class="project-status-tag">Upcoming · Office spaces</span>
+              <div class="project-status-card-copy"><span class="project-status-tag">Delivery June 2027 · Office spaces</span>
                 <h4>Jujhar IT Building</h4><p>Sector 101-A, Mohali</p>
-                <p class="project-description">A planned office development offering 2,60,000 square feet of space in Mohali.</p>
+                <p class="project-description">A commercial development offering 2,60,000 square feet of modern workspaces in Mohali, with delivery scheduled for June 2027.</p>
               </div>
             </article>
             </div>
@@ -148,14 +148,14 @@
     if (furnished && earlyAnchor && earlyAnchor.nextElementSibling !== furnished) earlyAnchor.after(furnished);
     addSection("home-group-companies", register, "after", `
       <div class="brochure-wrap">
-        <div class="brochure-section-heading"><div><p class="brochure-eyebrow">A wider family of businesses</p><h2>Connected by<br>a shared vision.</h2></div><p>The group’s interests span real estate, hospitality, entertainment, connectivity, media and healthcare.</p></div>
+        <div class="brochure-section-heading"><div><p class="brochure-eyebrow">Businesses &amp; leadership ventures</p><h2>Connected by<br>a shared vision.</h2></div><p>The group’s businesses span real estate, hospitality, entertainment and connectivity. Its leadership experience also includes former media ventures and an association with healthcare.</p></div>
         <div class="group-company-grid">
-          <article><span>01 / Real estate</span><h3>Places to live &amp; work</h3><ul><li>The Auralius</li><li>Opus One</li><li>The Grand Walk</li><li>Alpha International City</li><li>Group Housing Project, Tangori</li><li>Jujhar IT Building</li></ul></article>
-          <article><span>02 / Hospitality</span><h3>Welcoming destinations</h3><ul><li>Golden Sarovar Portico <small>Amritsar</small></li><li>Fairfield by Marriott <small>Amritsar</small></li><li>The Fern Surya Resort <small>Dharampur</small></li></ul></article>
-          <article><span>03 / Family entertainment</span><h3>Time together</h3><ul><li>FunCity <small>Near Chandigarh</small></li><li>Sun City <small>Amritsar</small></li></ul></article>
+          <article><span>01 / Real estate</span><h3>Places to live &amp; work</h3><ul><li>The Auralius</li><li>Opus One</li><li>The Grand Walk</li><li>Alpha International City</li><li>Group Housing Project, Tangori</li><li>Jujhar IT Building</li><li>South Hall Street <small>Leadership portfolio</small></li><li>Falak Farms <small>Premium farmhouse community</small></li></ul></article>
+          <article><span>02 / Hospitality</span><h3>Welcoming destinations</h3><ul><li>Sarovar Premiere <small>Amritsar</small></li><li>Fairfield by Marriott <small>Amritsar</small></li><li>The Fern Surya Resort <small>Dharampur</small></li></ul></article>
+          <article><span>03 / Family entertainment</span><h3>Time together</h3><ul><li>FunCity <small>Near Chandigarh</small></li><li>Sun City <small>Amritsar</small></li><li>Kingdom Come Entertainment <small>Live entertainment &amp; comedy</small></li></ul></article>
           <article><span>04 / Connectivity</span><h3>Everyday connections</h3><ul><li>Fastway <small>Cable &amp; digital entertainment</small></li><li>Netplus <small>Broadband &amp; connectivity</small></li></ul></article>
-          <article><span>05 / Media</span><h3>Stories &amp; culture</h3><ul><li>Punjabi Hits <small>Music channel</small></li><li>Tabbar Hits <small>Movie channel</small></li></ul></article>
-          <article><span>06 / Healthcare</span><h3>Care for families</h3><ul><li>Apollo Cradle <small>Maternal &amp; childcare</small></li></ul></article>
+          <article><span>05 / Former media ventures</span><h3>Stories &amp; culture</h3><ul><li>Living India News <small>Divested in 2025</small></li><li>Punjabi Hits <small>Music channel · Divested in 2025</small></li><li>Tabbar Hits <small>Movie channel · Divested in 2025</small></li></ul></article>
+          <article><span>06 / Healthcare association</span><h3>Care for families</h3><ul><li>Apollo Cradle <small>Leadership association · Maternal &amp; childcare</small></li></ul></article>
         </div>
       </div>`);
   }
