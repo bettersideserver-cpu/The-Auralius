@@ -56,12 +56,6 @@
           <div class="developer-story-rule" aria-hidden="true"></div>
           <img src="./developers/images/surya-realty-logo.png" alt="Surya Realty" loading="lazy">
           <p>Rooted in North India, Surya Realty brings experience across hospitality, entertainment and construction to residential, commercial and leisure developments. Its approach places innovation, sustainability and community at the heart of each project.</p>
-          <div class="developer-leadership" aria-label="Surya Realty leadership">
-            <div><strong>Sarabjit Singh</strong><span>Chairman</span></div>
-            <div><strong>Kamaljit Singh</strong><span>Director</span></div>
-            <div><strong>Angad Deep Singh</strong><span>Director</span></div>
-            <div><strong>Gurasees Singh</strong><span>Director</span></div>
-          </div>
           <a class="developer-story-link" href="./developers/">Meet the developer <span aria-hidden="true">↗</span></a>
         </div>
       </div>`);
@@ -148,14 +142,26 @@
     if (furnished && earlyAnchor && earlyAnchor.nextElementSibling !== furnished) earlyAnchor.after(furnished);
     addSection("home-group-companies", register, "after", `
       <div class="brochure-wrap">
-        <div class="brochure-section-heading"><div><p class="brochure-eyebrow">Businesses &amp; leadership ventures</p><h2>Connected by<br>a shared vision.</h2></div><p>The group’s businesses span real estate, hospitality, entertainment and connectivity. Its leadership experience also includes former media ventures and an association with healthcare.</p></div>
+        <div class="brochure-section-heading"><div><p class="brochure-eyebrow">Businesses &amp; leadership ventures</p><h2>Connected by<br>a shared vision.</h2></div><p>The group’s businesses span real estate, hospitality, entertainment and connectivity. Its leadership experience also includes an association with healthcare.</p></div>
         <div class="group-company-grid">
-          <article><span>01 / Real estate</span><h3>Places to live &amp; work</h3><ul><li>The Auralius</li><li>Opus One</li><li>The Grand Walk</li><li>Alpha International City</li><li>Group Housing Project, Tangori</li><li>Jujhar IT Building</li><li>South Hall Street <small>Leadership portfolio</small></li><li>Falak Farms <small>Premium farmhouse community</small></li></ul></article>
+          <article><span>01 / Real estate</span><h3>Places to live &amp; work</h3><ul><li>The Auralius</li><li>Opus One</li><li>The Grand Walk</li><li>Alpha International City</li><li>Group Housing Project, Tangori</li><li>Jujhar IT Building <small>Delivery: June 2027</small></li><li>South Hall Street <small>Leadership portfolio</small></li><li>Falak Farms <small>Premium farmhouse community</small></li></ul></article>
           <article><span>02 / Hospitality</span><h3>Welcoming destinations</h3><ul><li>Sarovar Premiere <small>Amritsar</small></li><li>Fairfield by Marriott <small>Amritsar</small></li><li>The Fern Surya Resort <small>Dharampur</small></li></ul></article>
           <article><span>03 / Family entertainment</span><h3>Time together</h3><ul><li>FunCity <small>Near Chandigarh</small></li><li>Sun City <small>Amritsar</small></li><li>Kingdom Come Entertainment <small>Live entertainment &amp; comedy</small></li></ul></article>
           <article><span>04 / Connectivity</span><h3>Everyday connections</h3><ul><li>Fastway <small>Cable &amp; digital entertainment</small></li><li>Netplus <small>Broadband &amp; connectivity</small></li></ul></article>
-          <article><span>05 / Former media ventures</span><h3>Stories &amp; culture</h3><ul><li>Living India News <small>Divested in 2025</small></li><li>Punjabi Hits <small>Music channel · Divested in 2025</small></li><li>Tabbar Hits <small>Movie channel · Divested in 2025</small></li></ul></article>
-          <article><span>06 / Healthcare association</span><h3>Care for families</h3><ul><li>Apollo Cradle <small>Leadership association · Maternal &amp; childcare</small></li></ul></article>
+          <article><span>05 / Healthcare association</span><h3>Care for families</h3><ul><li>Apollo Cradle <small>Amritsar</small><small>Leadership association · Maternal &amp; childcare</small></li></ul></article>
+        </div>
+      </div>`);
+    addSection("csr", document.getElementById("home-group-companies"), "after", `
+      <div class="brochure-wrap csr-layout">
+        <figure class="csr-visual"><img src="./images/csr-community.webp" alt="Illustration of hands sheltering a paper family, representing community care" width="1801" height="1501" loading="lazy"></figure>
+        <div class="csr-content">
+          <p class="brochure-eyebrow">Corporate social responsibility</p>
+          <h2>Building with<br><em>responsibility.</em></h2>
+          <p class="csr-intro">Progress extends beyond the places we build. Surya Realty’s social initiatives provide care, shelter and dignity to the communities it serves.</p>
+          <div class="csr-initiatives">
+            <article><span>01 / Animal welfare</span><h3>Shelter and everyday care</h3><p>Five gaushalas across Amritsar and Kartarpur provide shelter and care for over 600 cows.</p></article>
+            <article><span>02 / Care for the elderly</span><h3>Dignity in later life</h3><p>An old-age home in Amritsar offers free accommodation and care to elderly residents in a supportive environment.</p></article>
+          </div>
         </div>
       </div>`);
   }
@@ -243,12 +249,12 @@
       ["06", "Other bathrooms", "Designer tile finishes, marble or granite counters, sanitary fittings and glass shower enclosures."],
       ["07", "Staff accommodation", "Dedicated staff rooms with ceramic tile flooring and oil-bound distemper finishes."],
       ["08", "Doors, windows & wardrobes", "Veneer-finished doors, modular wardrobes and aluminium-framed double glazing."],
-      ["09", "Electrical & lighting", "Copper wiring, modular switches, energy-efficient LED lights and exhaust fans."],
+      ["09", "Electrical & lighting", "24/7 electricity supply, copper wiring, modular switches, energy-efficient LED lights and exhaust fans."],
       ["10", "Air conditioning", "VRV air conditioning, with Daikin, Mitsubishi or equivalent equipment specified."],
       ["11", "Heat pump", "A heat pump system, with Jaquar or Intersolar equipment specified."],
       ["12", "Television", "Samsung, LG or equivalent television equipment is included in the specifications."],
-      ["13", "Decorative details", "Decorative lighting and handcrafted artwork on the double-height wall."],
-      ["14", "Fully furnished interiors", "Beds and mattresses, sofas, a dining table and chairs, and easy chairs."]
+      ["13", "Handmade paintings", "Handmade paintings and decorative lighting, including artwork on the double-height wall."],
+      ["14", "Bespoke interiors", "Fully furnished bespoke interiors with beds and mattresses, sofas, a dining table and chairs, and easy chairs."]
     ].map(([number, title, copy]) => `<article><span>${number}</span><h3>${title}</h3><p>${copy}</p></article>`).join("");
     addSection("in-villa-comforts", amenities, "after", `
       <div class="brochure-wrap">
