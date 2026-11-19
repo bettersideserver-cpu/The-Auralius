@@ -20,7 +20,7 @@ Source: `D:/auralis/Surya Realty _ Profile.pdf`, uploaded 17 November 2026. Page
 
 - **South Hall Street:** added under real estate as part of the leadership portfolio (page 7).
 - **Falak Farms:** added under real estate as a premium farmhouse community (page 8).
-- **Kingdom Come Entertainment:** added under entertainment, with live entertainment and comedy (page 8).
+- **:** added under entertainment, with live entertainment and comedy (page 8).
 - **Living India News:** added alongside the other former media ventures, explicitly marked divested in 2025 (page 7).
 
 No delivery status or completion date was invented for the newly named ventures.

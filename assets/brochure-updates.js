@@ -147,7 +147,7 @@
         <div class="group-company-grid">
           <article><span>01 / Real estate</span><h3>Places to live &amp; work</h3><ul><li>The Auralius</li><li>Opus One</li><li>The Grand Walk</li><li>Alpha International City</li><li>Group Housing Project, Tangori</li><li>Jujhar IT Building <small>Delivery: June 2027</small></li><li>South Hall Street <small>Leadership portfolio</small></li><li>Falak Farms <small>Premium farmhouse community</small></li></ul></article>
           <article><span>02 / Hospitality</span><h3>Welcoming destinations</h3><ul><li>Sarovar Premiere <small>Amritsar</small></li><li>Fairfield by Marriott <small>Amritsar</small></li><li>The Fern Surya Resort <small>Dharampur</small></li></ul></article>
-          <article><span>03 / Family entertainment</span><h3>Time together</h3><ul><li>FunCity <small>Near Chandigarh</small></li><li>Sun City <small>Amritsar</small></li><li>Kingdom Come Entertainment <small>Live entertainment &amp; comedy</small></li></ul></article>
+          <article><span>03 / Family entertainment</span><h3>Time together</h3><ul><li>FunCity <small>Near Chandigarh</small></li><li>Sun City <small>Amritsar</small></li><li> <small></small></li></ul></article>
           <article><span>04 / Connectivity</span><h3>Everyday connections</h3><ul><li>Fastway <small>Cable &amp; digital entertainment</small></li><li>Netplus <small>Broadband &amp; connectivity</small></li></ul></article>
           <article><span>05 / Healthcare association</span><h3>Care for families</h3><ul><li>Apollo Cradle <small>Amritsar</small><small>Leadership association · Maternal &amp; childcare</small></li></ul></article>
         </div>
